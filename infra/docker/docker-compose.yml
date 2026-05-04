@@ -1,0 +1,63 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pingpay-postgres
+    environment:
+      POSTGRES_USER: pingpay
+      POSTGRES_PASSWORD: pingpay123
+      POSTGRES_DB: pingpay
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pingpay"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: pingpay-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass redis123
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redis123", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    container_name: pingpay-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: pingpay
+      RABBITMQ_DEFAULT_PASS: pingpay123
+    ports:
+      - "5672:5672"    # AMQP
+      - "15672:15672"  # Management UI
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+  localstack:
+    image: localstack/localstack:3
+    container_name: pingpay-localstack
+    environment:
+      SERVICES: s3,kms,secretsmanager
+      DEFAULT_REGION: us-east-1
+      LOCALSTACK_AUTH_TOKEN: ""
+    ports:
+      - "4566:4566"
+    volumes:
+      - localstack_data:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  postgres_data:
+  localstack_data:
