@@ -31,9 +31,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPay.Identity.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPay.Identity.Application", "src\services\identity\PingPay.Identity.Application\PingPay.Identity.Application.csproj", "{A32D69EC-BF8A-4356-9915-677E5D9493E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPay.Identity.Infraestructure", "src\services\identity\PingPay.Identity.Infraestructure\PingPay.Identity.Infraestructure.csproj", "{7525A21B-3647-4649-905F-86E9EAE7F357}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPay.Identity.Infrastructure", "src\services\identity\PingPay.Identity.Infrastructure\PingPay.Identity.Infrastructure.csproj", "{7525A21B-3647-4649-905F-86E9EAE7F357}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPay.Identity.Tests", "tests\PingPay.Identity.Tests\PingPay.Identity.Tests.csproj", "{E464B16F-8684-4123-8207-CAFA62ED8345}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingPay.Identity.Infraestructure", "src\services\identity\PingPay.Identity.Infrastructure\PingPay.Identity.Infraestructure.csproj", "{239CCCA0-ADCC-4717-BA00-13D339D8E4C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +82,10 @@ Global
 		{E464B16F-8684-4123-8207-CAFA62ED8345}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E464B16F-8684-4123-8207-CAFA62ED8345}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E464B16F-8684-4123-8207-CAFA62ED8345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{239CCCA0-ADCC-4717-BA00-13D339D8E4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{239CCCA0-ADCC-4717-BA00-13D339D8E4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{239CCCA0-ADCC-4717-BA00-13D339D8E4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{239CCCA0-ADCC-4717-BA00-13D339D8E4C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F933BB86-2CE0-4A89-A0E2-A1621766CF60} = {5999F126-9E25-4976-9CF9-373AE8E44F82}
@@ -96,5 +102,6 @@ Global
 		{A32D69EC-BF8A-4356-9915-677E5D9493E4} = {E2A22DDF-EB45-497A-BAB4-2571213C0A5E}
 		{7525A21B-3647-4649-905F-86E9EAE7F357} = {E2A22DDF-EB45-497A-BAB4-2571213C0A5E}
 		{E464B16F-8684-4123-8207-CAFA62ED8345} = {FFC070EB-7C3F-407B-BFF5-7EE294ABE736}
+		{239CCCA0-ADCC-4717-BA00-13D339D8E4C5} = {E2A22DDF-EB45-497A-BAB4-2571213C0A5E}
 	EndGlobalSection
 EndGlobal

@@ -2,11 +2,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PingPay.Identity.Application\PingPay.Identity.Application.csproj" />
+    <ProjectReference Include="..\PingPay.Identity.Domain\PingPay.Identity.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Bcrypt.Net-Next" Version="4.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.7" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="10.0.7" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.18.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.*" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.18.0" />
   </ItemGroup>
 
